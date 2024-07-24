@@ -3,7 +3,7 @@ import Container from "@/components/layout/container";
 import React from "react";
 import Tag from "@/components/general/tag";
 import Image from "next/image";
-import AboutSectionImage from "@/../public/about-section/Banner.png";
+import AboutSectionImage from "@/../public/about-section/about_section_image.png";
 import Content from "@/components/home-page/about-section/content/content";
 
 const AboutSection = () => {

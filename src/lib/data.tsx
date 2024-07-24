@@ -25,14 +25,10 @@ import LogoGreenApex from "../../public/skill-section/logo-greenapex.svg";
 import LogoGreenApexLight from "../../public/skill-section/logo-greenapex-light.svg";
 import LogoDotnpixel from "../../public/skill-section/logo-dotnpixel.svg";
 import LogoDotnpixelLight from "../../public/skill-section/logo-dotnpixel-light.svg";
-import LogoCubiSpace from "../../public/skill-section/logo_text_black.png";
-import LogoCubiSpace_Dark from "../../public/skill-section/Logo_no_background.png";
 
 import ProjectFiskil from "../../public/work-section/project-fiskil.png";
 import ProjectWingie from "../../public/work-section/project-wingie.png";
 import ProjectPepehousing from "../../public/work-section/project-pepehousing.png";
-import ProjectPlaceHolder from "../../public/hero-section/Banner.png"
-
 
 import AvatarDummy from "../../public/testimonial-section/avatar-dummy.svg";
 
@@ -64,7 +60,7 @@ export const NAV_LINKS = [
 
 export const EXTERNAL_LINKS = {
   GITHUB: "https://github.com/cubi-dev",
-  GITHUB_REPO: "https://github.com/cubi-dev?tab=repositories",
+  GITHUB_REPO: "https://github.com/shahsagarm/sagarshah.dev",
   TWITTER: "https://x.com/Cubiwork",
   FIGMA: "https://www.figma.com/@bi8",
   FIGMA_FILE:
@@ -75,97 +71,116 @@ export const SOCIAL_LINKS = [
   {
     icon: Github,
     url: "https://github.com/cubi-dev",
+    displayName: "Github",
   },
   {
     icon: Twitter,
     url: "https://x.com/Cubiwork",
+    displayName: "Twitter",
   },
   {
     icon: Figma,
     url: "https://www.figma.com/@bi8",
+    displayName: "Figma",
   },
 ];
 
 export const TECHNOLOGIES: TechDetails[] = [
-  {
+  { 
+    id: "1",
     label: "Javascript",
     logo: LogoJavascript,
     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
   {
+    id: "2",
     label: "Typescript",
     logo: LogoTypescript,
     url: "https://www.typescriptlang.org/",
   },
   {
+    id: "3",
     label: "React",
     logo: LogoReact,
     url: "https://react.dev/",
   },
   {
+    id: "4",
     label: "Next.js",
     logo: LogoNextjs,
     url: "https://nextjs.org/",
   },
   {
+    id: "5",
     label: "Node.js",
     logo: LogoNodejs,
     url: "https://nodejs.org/en",
   },
   {
+    id: "6",
     label: "Express.js",
     logo: LogoExpress,
     darkModeLogo: LogoExpressLight,
     url: "https://expressjs.com/",
   },
   {
+    id: "7",
     label: "Nest.js",
     logo: LogoNest,
     url: "https://nestjs.com/",
   },
   {
+    id: "8",
     label: "Socket.io",
     logo: LogoSocket,
     darkModeLogo: LogoSocketLight,
     url: "https://socket.io/",
   },
   {
+    id: "9",
     label: "PostgreSQL",
     logo: LogoPostgreSQL,
     url: "https://www.postgresql.org/",
   },
   {
+    id: "10",
     label: "MongoDB",
     logo: LogoMongoDB,
     url: "https://www.mongodb.com/",
   },
   {
+    id: "11",
     label: "Sass/Scss",
     logo: LogoSass,
     url: "https://sass-lang.com/",
   },
   {
+    id: "12",
     label: "Tailwindcss",
     logo: LogoTailwindcss,
     url: "https://tailwindcss.com/",
   },
   {
+    id: "13",
     label: "Figma",
     logo: LogoFigma,
     url: "https://www.figma.com/",
   },
   {
+    id: "14",
     label: "Cypress",
     logo: LogoCypress,
     darkModeLogo: LogoCypressLight,
     url: "https://www.cypress.io/",
   },
   {
+    id: "15",
     label: "Storybook",
     logo: LogoStorybook,
     url: "https://storybook.js.org/",
   },
   {
+    id: "16",
     label: "Git",
     logo: LogoGit,
     url: "https://git-scm.com/",
@@ -174,50 +189,53 @@ export const TECHNOLOGIES: TechDetails[] = [
 
 export const EXPERIENCES: ExperienceDetails[] = [
   {
-    logo: LogoCubiSpace,
-    darkModeLogo: LogoCubiSpace_Dark,
-    logoAlt: "Logo CubiSpace",
-    position: "Position",
+    id: "1",
+    logo: LogoUpwork,
+    logoAlt: "Upwork logo",
+    position: "Independent Freelancer",
     startDate: new Date(2021, 10),
     currentlyWorkHere: true,
     summary: [
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Worked for various clients like Fiskil, Shosho, Crowe MacKay LLP.",
+      "Worked with a variety of technologies, including React, Next.js, Typescript, Express.js, PostgreSQL, Tailwindcss, Mui, Firebase, Storybook, Cypress, and others.",
     ],
   },
   {
-    logo: LogoCubiSpace,
-    darkModeLogo: LogoCubiSpace_Dark,
-    logoAlt: "Logo CubiSpace",
-    position: "Position",
+    id: "2",
+    logo: LogoGreenApex,
+    darkModeLogo: LogoGreenApexLight,
+    logoAlt: "Greenapex logo",
+    position: "Team Lead",
     startDate: new Date(2017, 6),
     endDate: new Date(2021, 9),
     summary: [
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      "Lorem Ipsum is simply dummy text of the printing ad dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      "Lorem Ipsum is simplhe 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy ",
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown ",
+      "Acted as team lead in different projects.",
+      "Brainstormed new ideas & gathered requirements for internal projects.",
+      "Designed architecture of different projects (frontend + backend).",
+      "Worked on enterprise-level projects for a variety of clients.",
+      "Handled sprint planning & task distribution.",
     ],
   },
   {
-    logo: LogoCubiSpace,
-    darkModeLogo: LogoCubiSpace_Dark,
-    logoAlt: "LogoCubiSpace",
-    position: "Position",
+    id: "3",
+    logo: LogoDotnpixel,
+    darkModeLogo: LogoDotnpixelLight,
+    logoAlt: "Dotnpixel logo",
+    position: "Full Stack Developer",
     startDate: new Date(2015, 11),
     endDate: new Date(2017, 4),
-    summary: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
+    summary: ["Worked as a full stack developer (React / Laravel)."],
   },
 ];
 
 export const PROJECTS: ProjectDetails[] = [
   {
+    id: "1",
     name: "Wingie",
     description:
       "A platform for comparing and finding affordable flights, as well as booking and purchasing tickets safely and easily in a few simple clicks.",
-    url: "https://github.com/cubi-dev",
-    previewImage: ProjectPlaceHolder,
+    url: "https://www.wingie.com",
+    previewImage: ProjectWingie,
     technologies: [
       "React",
       "Typescript",
@@ -230,11 +248,12 @@ export const PROJECTS: ProjectDetails[] = [
     ],
   },
   {
+    id: "2",
     name: "Fiskil",
     description:
       "A platform for accessing real-time open banking and energy data to help you grow your business, backed with scalable back-end infrastructure.",
-    url: "https://github.com/cubi-dev",
-    previewImage: ProjectPlaceHolder,
+    url: "https://fiskil.com.au",
+    previewImage: ProjectFiskil,
     technologies: [
       "React",
       "Next.js",
@@ -252,11 +271,12 @@ export const PROJECTS: ProjectDetails[] = [
     ],
   },
   {
+    id: "3",
     name: "Pepehousing",
     description:
       "A platform for renting a flat or room in Poland. You may browse hundreds of verified deals, contact the vendor, and pay online in a simple and secure manner.",
-    url: "https://github.com/cubi-dev",
-    previewImage: ProjectPlaceHolder,
+    url: "https://pepehousing.com",
+    previewImage: ProjectPepehousing,
     technologies: [
       "React",
       "Next.js",
@@ -271,6 +291,7 @@ export const PROJECTS: ProjectDetails[] = [
 
 export const TESTIMONIALS: TestimonialDetails[] = [
   {
+    id: "1",
     personName: "Krisztian Gyuris",
     personAvatar: AvatarDummy,
     title: "Founder - inboxgenie.io",
@@ -278,6 +299,7 @@ export const TESTIMONIALS: TestimonialDetails[] = [
       "Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the future for Frontend development.",
   },
   {
+    id: "2",
     personName: "Eugen Esanu",
     personAvatar: AvatarDummy,
     title: "Founder - shosho.design",
@@ -285,6 +307,7 @@ export const TESTIMONIALS: TestimonialDetails[] = [
       "Great guy, highly recommended for any COMPLEX front-end development job! His skills are top-notch and he will be an amazing addition to any team.",
   },
   {
+    id: "3",
     personName: "Joe Matkin",
     personAvatar: AvatarDummy,
     title: "Freelancer",

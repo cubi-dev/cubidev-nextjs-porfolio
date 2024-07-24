@@ -1,6 +1,7 @@
 import type { StaticImageData } from 'next/image';
 
 export type TechDetails = {
+  id: string;
   logo: string | StaticImageData;
   darkModeLogo?: string | StaticImageData;
   label: string;
@@ -8,6 +9,7 @@ export type TechDetails = {
 };
 
 export type ExperienceDetails = {
+  id: string,
   logo: string | StaticImageData;
   darkModeLogo?: string | StaticImageData;
   logoAlt: string;
@@ -19,6 +21,7 @@ export type ExperienceDetails = {
 };
 
 export type ProjectDetails = {
+  id: string;
   name: string;
   description: string;
   url: string;
@@ -27,6 +30,7 @@ export type ProjectDetails = {
 };
 
 export type TestimonialDetails = {
+  id: string;
   personName: string;
   personAvatar?: string | StaticImageData;
   testimonial: string;

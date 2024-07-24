@@ -39,7 +39,7 @@ const ImageWrapper = ({
   const finalSrc = theme === 'dark' ? srcForDarkMode || src : src;
 
   // Render component Image với src đã xác định và các props khác.
-  return <Image src={finalSrc!} alt={alt} {...props} />;
+  return <Image width={0} height={0} src={finalSrc!} alt={alt} {...props} className='w-fit h-fit object-cover'/>;
 };
 
 // Xuất component ImageWrapper để sử dụng ở nơi khác.
