@@ -14,18 +14,24 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { DialogEditAboutInformationProps } from "@/lib/types";
 
-function DialogEditAboutInformation() {
+const DialogEditAboutInformation: React.FC<DialogEditAboutInformationProps> = ({
+  infor,
+  setInfor,
+}) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [infor, setInfor] = useState(
-    `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
-  );
+  // const [infor, setInfor] = useState(
+  //   `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
+  // );
   //
   const [tempInfor, setTempInfor] = useState(infor);
   //
 
   const handleSaveChanges = () => {
-    setInfor(tempInfor);
+    if(setInfor){
+      setInfor(tempInfor);
+    }
     setIsDialogOpen(false); // Đóng dialog
   };
 
@@ -35,7 +41,7 @@ function DialogEditAboutInformation() {
     }
   }, [infor, isDialogOpen]);
 
-  const informationContentFormat = infor.replace(/(?:\r\n|\r|\n)/g, "<br>");
+  const informationContentFormat = infor?.replace(/(?:\r\n|\r|\n)/g, "<br>");
 
   return (
     <>
@@ -87,6 +93,6 @@ function DialogEditAboutInformation() {
       </Dialog>
     </>
   );
-}
+};
 
 export default DialogEditAboutInformation;

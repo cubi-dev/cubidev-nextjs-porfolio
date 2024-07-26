@@ -17,27 +17,45 @@ import Typography from "@/components/general/typography";
 import { SOCIAL_LINKS } from "@/lib/data";
 import IconButton from "@/components/general/icon-button";
 import { Textarea } from "@/components/ui/textarea";
+import { DialogEditHeroInformationProps } from "@/lib/types";
 
-const DialogEditHeroInformation = () => {
+const DialogEditHeroInformation: React.FC<DialogEditHeroInformationProps> = ({
+  userName,
+  setUserName,
+  description,
+  setDescription,
+  country,
+  setCountry,
+  city,
+  setCity,
+  availableStatus,
+  setAvailableStatus,
+  githubLink,
+  setGithubLink,
+  twitterLink,
+  setTwitterLink,
+  figmaLink,
+  setFigmaLink,
+}) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [userName, setUserName] = useState(`UserName`);
-  const [description, setDescription] = useState(
-    `I'm a full stack developer (React.js & Node.js) with a focus on creating (and occasionally designing) exceptional digital experiences that are fast, accessible, visually appealing, and responsive. Even though I have been creating web applications for over 7 years, I still love it as if it was something new.`
-  );
-  const [country, setCountry] = useState(`VietNam`);
-  const [city, setCity] = useState(`Ho Chi Minh`);
-  const [availableStatus, setAvailableStatus] = useState(
-    `Available for new projects`
-  );
-  const [githubLink, setGithubLink] = useState(
-    SOCIAL_LINKS.find((link) => link.displayName === "Github")?.url || ""
-  );
-  const [twitterLink, setTwitterLink] = useState(
-    SOCIAL_LINKS.find((link) => link.displayName === "Twitter")?.url || ""
-  );
-  const [figmaLink, setFigmaLink] = useState(
-    SOCIAL_LINKS.find((link) => link.displayName === "Figma")?.url || ""
-  );
+  // const [userName, setUserName] = useState(`UserName`);
+  // const [description, setDescription] = useState(
+  //   `I'm a full stack developer (React.js & Node.js) with a focus on creating (and occasionally designing) exceptional digital experiences that are fast, accessible, visually appealing, and responsive. Even though I have been creating web applications for over 7 years, I still love it as if it was something new.`
+  // );
+  // const [country, setCountry] = useState(`VietNam`);
+  // const [city, setCity] = useState(`Ho Chi Minh`);
+  // const [availableStatus, setAvailableStatus] = useState(
+  //   `Available for new projects`
+  // );
+  // const [githubLink, setGithubLink] = useState(
+  //   SOCIAL_LINKS.find((link) => link.displayName === "Github")?.url || ""
+  // );
+  // const [twitterLink, setTwitterLink] = useState(
+  //   SOCIAL_LINKS.find((link) => link.displayName === "Twitter")?.url || ""
+  // );
+  // const [figmaLink, setFigmaLink] = useState(
+  //   SOCIAL_LINKS.find((link) => link.displayName === "Figma")?.url || ""
+  // );
   // Cập nhật SOCIAL_LINKS dựa trên state
   const updatedSocialLinks = SOCIAL_LINKS.map((link) => {
     switch (link.displayName) {
@@ -56,13 +74,26 @@ const DialogEditHeroInformation = () => {
   const [tempDescription, setTempDescription] = useState(description);
   const [tempCountry, setTempCountry] = useState(country);
   const [tempCity, setTempCity] = useState(city);
-  const [tempAvailableStatus, setTempAvailableStatus] = useState(availableStatus);
+  const [tempAvailableStatus, setTempAvailableStatus] =
+    useState(availableStatus);
   const [tempGithubLink, setTempGithubLink] = useState(githubLink);
   const [tempTwitterLink, setTempTwitterLink] = useState(twitterLink);
   const [tempFigmaLink, setTempFigmaLink] = useState(figmaLink);
   //
   const handleSaveChanges = () => {
-    setUserName(tempUserName); 
+    if (
+      setUserName === undefined ||
+      setDescription === undefined ||
+      setCountry === undefined ||
+      setCity === undefined ||
+      setAvailableStatus === undefined ||
+      setGithubLink === undefined ||
+      setTwitterLink === undefined ||
+      setFigmaLink === undefined
+    ) {
+      return;
+    }
+    setUserName(tempUserName);
     setDescription(tempDescription);
     setCountry(tempCountry);
     setCity(tempCity);
@@ -84,8 +115,17 @@ const DialogEditHeroInformation = () => {
       setTempTwitterLink(twitterLink);
       setTempFigmaLink(figmaLink);
     }
-  }, [availableStatus, city, country, description, figmaLink, githubLink, isDialogOpen, twitterLink, userName]);
-
+  }, [
+    availableStatus,
+    city,
+    country,
+    description,
+    figmaLink,
+    githubLink,
+    isDialogOpen,
+    twitterLink,
+    userName,
+  ]);
 
   return (
     <>

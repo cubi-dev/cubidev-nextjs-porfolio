@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import Link from "@/components/navigation/link";
 import ThemeSwitcher from "@/components/general/theme-switcher";
 import { NAV_LINKS } from "@/lib/data";
-import Logo from "../ui/logo";
 import useWindowSize from "@/hooks/use-window-size";
 import {
   Drawer,
@@ -19,11 +18,14 @@ import Typography from "@/components/general/typography";
 
 import DialogEditLogo from "../dialog/header/dialog-edit-logo";
 import DialogEditCV from "../dialog/header/dialog-edit-cv";
+import { LogoText } from "@/lib/types";
 
 const Header = () => {
   const scrolled = useScroll(40);
   const [isOpen, setIsOpen] = useState(false);
   const size = useWindowSize();
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [logoText, setLogoText] = useState<LogoText>("<LOGO />");
 
   // close sidebar if open in screen size < 768px
   useEffect(() => {
@@ -40,7 +42,12 @@ const Header = () => {
       )}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between p-4 md:px-8">
-        <DialogEditLogo />
+        <DialogEditLogo
+          isDialogOpen={isDialogOpen}
+          setIsDialogOpen={setIsDialogOpen}
+          logoText={logoText}
+          setLogoText={setLogoText}
+        />
         {/* nav desktop */}
         <div className="hidden items-center gap-6 md:flex">
           <ul className="flex list-none items-center gap-6">
@@ -81,7 +88,12 @@ const Header = () => {
           </DrawerTrigger>
           <DrawerContent>
             <div className="flex items-center justify-between border-b border-gray-100 p-4">
-              <Logo />
+              <DialogEditLogo
+                isDialogOpen={isDialogOpen}
+                setIsDialogOpen={setIsDialogOpen}
+                logoText={logoText}
+                setLogoText={setLogoText}
+              />
               <DrawerClose asChild>
                 <IconButton>
                   <X />

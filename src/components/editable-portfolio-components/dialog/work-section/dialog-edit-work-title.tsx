@@ -15,14 +15,20 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { DialogEditWorkTitleProps } from "@/lib/types";
 
-function DialogEditWorkTitle() {
+const DialogEditWorkTitle: React.FC<DialogEditWorkTitleProps> = ({
+  title,
+  setTitle,
+}) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [title, setTitle] = useState(`Some of the noteworthy projects I have built:`);
+  // const [title, setTitle] = useState(`Some of the noteworthy projects I have built:`);
   const [tempTitle, setTempTitle] = useState(title);
 
   const handleSaveChanges = () => {
-    setTitle(tempTitle); // Cập nhật title từ tempTitle
+    if (setTitle) {
+      setTitle(tempTitle); // Cập nhật title từ tempTitle
+    }
     setIsDialogOpen(false); // Đóng dialog
   };
 
@@ -36,12 +42,12 @@ function DialogEditWorkTitle() {
     <>
       <CustomOutlineDiv>
         <div className="flex items-center gap-x-3">
-        <Typography
-          variant="subtitle"
-          className="max-w-xl text-center break-words whitespace-pre-wrap"
-        >
-          {title}
-        </Typography>
+          <Typography
+            variant="subtitle"
+            className="max-w-xl text-center break-words whitespace-pre-wrap"
+          >
+            {title}
+          </Typography>
           <Button
             variant={"ghost"}
             size={"icon"}
@@ -57,7 +63,8 @@ function DialogEditWorkTitle() {
           <DialogHeader>
             <DialogTitle>Edit Work title</DialogTitle>
             <DialogDescription>
-              Edit your work title to represent what your thought about your experiences to impress visitors.
+              Edit your work title to represent what your thought about your
+              experiences to impress visitors.
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
@@ -81,6 +88,6 @@ function DialogEditWorkTitle() {
       </Dialog>
     </>
   );
-}
+};
 
 export default DialogEditWorkTitle;

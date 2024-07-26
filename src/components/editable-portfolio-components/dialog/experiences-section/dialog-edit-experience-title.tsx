@@ -15,14 +15,20 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { DialogEditExperienceTitleProps } from "@/lib/types";
 
-function DialogEditExperienceTitle() {
+const DialogEditExperienceTitle: React.FC<DialogEditExperienceTitleProps> = ({
+  title,
+  setTitle,
+}) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [title, setTitle] = useState(`Here is a quick summary of my most recent experiences:`);
+  // const [title, setTitle] = useState(`Here is a quick summary of my most recent experiences:`);
   const [tempTitle, setTempTitle] = useState(title);
 
   const handleSaveChanges = () => {
-    setTitle(tempTitle); // Cập nhật title từ tempTitle
+    if (setTitle) {
+      setTitle(tempTitle); // Cập nhật title từ tempTitle
+    }
     setIsDialogOpen(false); // Đóng dialog
   };
 
@@ -36,12 +42,12 @@ function DialogEditExperienceTitle() {
     <>
       <CustomOutlineDiv>
         <div className="flex items-center gap-x-3">
-        <Typography
-          variant="subtitle"
-          className="max-w-xl text-center break-words whitespace-pre-wrap"
-        >
-          {title}
-        </Typography>
+          <Typography
+            variant="subtitle"
+            className="max-w-xl text-center break-words whitespace-pre-wrap"
+          >
+            {title}
+          </Typography>
           <Button
             variant={"ghost"}
             size={"icon"}
@@ -57,7 +63,8 @@ function DialogEditExperienceTitle() {
           <DialogHeader>
             <DialogTitle>Edit Experience Title</DialogTitle>
             <DialogDescription>
-              Edit your experience title to represent what your thought about your experiences to impress visitors.
+              Edit your experience title to represent what your thought about
+              your experiences to impress visitors.
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
@@ -81,6 +88,6 @@ function DialogEditExperienceTitle() {
       </Dialog>
     </>
   );
-}
+};
 
 export default DialogEditExperienceTitle;

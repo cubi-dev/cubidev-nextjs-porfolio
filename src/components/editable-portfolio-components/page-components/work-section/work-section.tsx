@@ -2,7 +2,7 @@
 import Tag from "@/components/general/tag";
 import Typography from "@/components/general/typography";
 import Container from "@/components/layout/container";
-import { PROJECTS } from "@/lib/data";
+import { PROJECTS, WORK_SECTION_DATA } from "@/lib/data";
 import React, { useState } from "react";
 import ProjectDetail from "./project-detail/project-detail";
 import DialogEditWorkTitle from "../../dialog/work-section/dialog-edit-work-title";
@@ -11,7 +11,8 @@ import { ProjectDetails } from "@/lib/types";
 import DialogAddProject from "../../dialog/work-section/dialog-add-project";
 
 const WorkSection = () => {
-  const [projects, setProjects] = useState(PROJECTS);
+  const [projects, setProjects] = useState(WORK_SECTION_DATA.projectsProps);
+  const [title, setTitle] = useState(WORK_SECTION_DATA.titleProps.title);
 
   const addProject = (newProject: ProjectDetails) => {
     setProjects([...projects, newProject]);
@@ -35,7 +36,7 @@ const WorkSection = () => {
         <div className="self-center">
           <Tag label="Work" />
         </div>
-        <DialogEditWorkTitle />
+        <DialogEditWorkTitle title={title} setTitle={setTitle} />
       </div>
       <div className="gap-y-3 flex flex-col">
         <DialogAddProject addProject={addProject} />

@@ -18,16 +18,22 @@ import { Input } from "@/components/ui/input";
 import IconButton from "@/components/general/icon-button";
 import { copyTextToClipboard } from "@/lib/utils";
 import useWindowSize from "@/hooks/use-window-size";
+import { DialogEditContactDetailProps } from "@/lib/types";
 
-type CopyValue = "email" | "phone";
+type CopyValue = "email" | "phoneNumber";
 
-function DialogEditContactDetail({}) {
+const DialogEditContactDetail: React.FC<DialogEditContactDetailProps> = ({
+  email,
+  phoneNumber,
+  setEmail,
+  setPhoneNumber,
+}) => {
   const { width } = useWindowSize();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [email, setEmail] = useState("email@gmail.com");
+  // const [email, setEmail] = useState("email@gmail.com");
   const [tempEmail, setTempEmail] = useState(email);
-  const [phone, setPhone] = useState("+84 0901391234");
-  const [tempPhone, setTempPhone] = useState(phone);
+  // const [phoneNumber, setPhone] = useState("+84 0901391234");
+  const [tempPhone, setTempPhone] = useState(phoneNumber);
   const [isCopied, setIsCopied] = useState(false);
   const [copiedValueType, setCopiedValueType] = useState<CopyValue | null>(
     null
@@ -57,17 +63,17 @@ function DialogEditContactDetail({}) {
   };
 
   const handleSaveChanges = () => {
-    setEmail(tempEmail); // Cập nhật email từ tempEmail
-    setPhone(tempPhone); // Cập nhật phone từ tempPhone
+    if (setEmail) setEmail(tempEmail); // Cập nhật email từ tempEmail
+    if (setPhoneNumber) setPhoneNumber(tempPhone); // Cập nhật phoneNumber từ tempPhone
     setIsDialogOpen(false); // Đóng dialog
   };
 
   useEffect(() => {
     if (isDialogOpen) {
-      setEmail(email);
-      setPhone(phone);
+      setTempEmail(email);
+      setTempPhone(phoneNumber);
     }
-  }, [email, isDialogOpen, phone]);
+  }, [email, isDialogOpen, phoneNumber]);
 
   return (
     <>
@@ -96,13 +102,15 @@ function DialogEditContactDetail({}) {
         </div>
         <div className="flex items-center gap-4 md:gap-5">
           <Phone className="h-6 w-6 md:h-8 md:w-8" />
-          {/* <Link href={`tel:${phone.replace(' ', '')}`}> */}
-          <Typography variant="h2">{phone}</Typography>
+          {/* <Link href={`tel:${phoneNumber.replace(' ', '')}`}> */}
+          <Typography variant="h2">{phoneNumber}</Typography>
           {/* </Link> */}
           <IconButton
             size={width && width < 768 ? "md" : "lg"}
-            onClick={() => handleCopyClick(phone.replace(" ", ""), "phone")}
-            showTooltip={isCopied && copiedValueType === "phone"}
+            onClick={() =>
+              handleCopyClick(phoneNumber.replace(" ", ""), "phoneNumber")
+            }
+            showTooltip={isCopied && copiedValueType === "phoneNumber"}
             tooltipText="Copied!"
           >
             <Copy />
@@ -129,11 +137,11 @@ function DialogEditContactDetail({}) {
               />
             </div>
             <div className="grid w-full items-center gap-1.5">
-              <Label htmlFor="phone">Phone</Label>
+              <Label htmlFor="phoneNumber">Phone</Label>
               <Input
                 type="text"
-                id="phone"
-                placeholder={"Input your phone of contact section"}
+                id="phoneNumber"
+                placeholder={"Input your phoneNumber of contact section"}
                 value={tempPhone}
                 onChange={(e) => setTempPhone(e.target.value)}
               />
@@ -148,6 +156,6 @@ function DialogEditContactDetail({}) {
       </Dialog>
     </>
   );
-}
+};
 
 export default DialogEditContactDetail;

@@ -1,4 +1,4 @@
-import CustomOutlineDiv from "@/components/editable-portfolio-components/ui/custom-outline-div";
+import React, { useState } from "react";
 import Card from "@/components/general/card";
 import ImageWrapper from "@/components/general/image-wrapper";
 import Typography from "@/components/general/typography";
@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/button";
 import { ExperienceDetails } from "@/lib/types";
 import { Pencil } from "lucide-react";
 import { StaticImageData } from "next/image";
-import React, { useState } from "react";
-import image_placeholder from "@/../public/placeholder_img.svg";
 import {
   Dialog,
   DialogContent,
@@ -45,12 +43,9 @@ const ExperienceDetail = ({
 }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [positionInput, setPositionInput] = useState(position);
-  const [currentlyWorkHereInput, setCurrentlyWorkHereInput] =
-    useState(currentlyWorkHere);
+  const [currentlyWorkHereInput, setCurrentlyWorkHereInput] = useState(currentlyWorkHere);
   const [summaryInput, setSummaryInput] = useState<string[]>(summary);
-  const [startDateInput, setStartDateInput] = useState<Date | undefined>(
-    startDate
-  );
+  const [startDateInput, setStartDateInput] = useState<Date | undefined>(startDate);
   const [endDateInput, setEndDateInput] = useState<Date | undefined>(endDate);
   const [logoInput, setLogoInput] = useState<string | StaticImageData>(logo);
 
@@ -189,7 +184,7 @@ const ExperienceDetail = ({
                 placeholder="Select your start date"
               />
             </div>
-            {currentlyWorkHere ? null : (
+            {currentlyWorkHereInput ? null : (
               <div className="grid w-full max-w-sm items-center gap-1.5">
                 <Label htmlFor="end_date">End Date</Label>
                 <DateTimePicker
@@ -205,12 +200,9 @@ const ExperienceDetail = ({
               <div className="items-top flex space-x-2">
                 <Checkbox
                   id="currently_work"
-                  checked={currentlyWorkHere}
-                  onCheckedChange={(checked) => {
-                    // Convert 'checked' to boolean if it's 'indeterminate'
-                    const isChecked =
-                      checked === "indeterminate" ? false : checked;
-                    setCurrentlyWorkHereInput(isChecked);
+                  checked={currentlyWorkHereInput}
+                  onCheckedChange={() => {
+                    setCurrentlyWorkHereInput(!currentlyWorkHereInput);
                   }}
                 />
                 <div className="grid gap-1.5 leading-none">

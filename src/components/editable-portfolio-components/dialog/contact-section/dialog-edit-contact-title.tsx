@@ -15,16 +15,19 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { DialogEditContactTitleProps } from "@/lib/types";
 
-function DialogEditContactTitle() {
+const DialogEditContactTitle: React.FC<DialogEditContactTitleProps> = ({title, setTitle}) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [title, setTitle] = useState(
-    `What’s next? Feel free to reach out to me if you are looking for a developer, have a query, or simply want to connect.`
-  );
+  // const [title, setTitle] = useState(
+  //   `What’s next? Feel free to reach out to me if you are looking for a developer, have a query, or simply want to connect.`
+  // );
   const [tempTitle, setTempTitle] = useState(title);
 
   const handleSaveChanges = () => {
-    setTitle(tempTitle); // Cập nhật title từ tempTitle
+    if(setTitle) {
+      setTitle(tempTitle); // Cập nhật title từ tempTitle
+    }
     setIsDialogOpen(false); // Đóng dialog
   };
 

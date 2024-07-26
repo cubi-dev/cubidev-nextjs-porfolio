@@ -11,7 +11,7 @@ export default function EditablePortfolio() {
   return (
     <>
       <HeroSection />
-      <AboutSection />
+      <AboutSection/>
       <SkillsSection />
       <ExperiencesSection />
       <WorkSection />

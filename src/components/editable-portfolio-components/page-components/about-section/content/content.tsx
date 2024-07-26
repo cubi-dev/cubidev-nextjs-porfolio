@@ -1,16 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
 import DialogEditAboutInformation from "@/components/editable-portfolio-components/dialog/about-section/dialog-edit-about-information";
 import DialogEditAboutTitle from "@/components/editable-portfolio-components/dialog/about-section/dialog-edit-about-title";
-import Typography from "@/components/general/typography";
-import Link from "@/components/navigation/link";
-import { EXTERNAL_LINKS } from "@/lib/data";
+import { ContentProps } from "@/lib/types";
 import React from "react";
 
-const Content = () => {
+const Content: React.FC<ContentProps> = ({ informationProps, titleProps }) => {
   return (
     <div className="flex max-w-xl flex-col gap-6">
-      <DialogEditAboutTitle />
-      <DialogEditAboutInformation/>
+      <DialogEditAboutTitle
+        title={titleProps.title}
+        setTitle={titleProps.setTitle}
+      />
+      <DialogEditAboutInformation
+        infor={informationProps.infor}
+        setInfor={informationProps.setInfor}
+      />
     </div>
   );
 };

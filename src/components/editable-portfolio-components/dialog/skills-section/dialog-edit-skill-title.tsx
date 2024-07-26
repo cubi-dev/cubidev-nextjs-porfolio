@@ -1,7 +1,7 @@
 "use client";
 
-import Typography from "@/components/general/typography";
 import React, { useEffect, useState } from "react";
+import Typography from "@/components/general/typography";
 import CustomOutlineDiv from "../../ui/custom-outline-div";
 import { Button } from "@/components/ui/button";
 import { Pencil } from "lucide-react";
@@ -15,33 +15,39 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { DialogEditSkillTitleProps } from "@/lib/types";
 
-function DialogEditSkillTitle() {
+const DialogEditSkillTitle: React.FC<DialogEditSkillTitleProps> = ({
+  title,
+  setTitle,
+}) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [title, setTitle] = useState(`The skills, tools and technologies I am really good at:`);
-   //
-   const [tempTitle, setTempTitle] = useState(title);
-   //
-   const handleSaveChanges = () => {
-     setTitle(tempTitle);
-     setIsDialogOpen(false); // Đóng dialog
-   };
- 
-   useEffect(() => {
-     if (isDialogOpen) {
-       setTempTitle(title);
-     }
-   }, [isDialogOpen, title]);
+  // const [title, setTitle] = useState(`The skills, tools and technologies I am really good at:`);
+  //
+  const [tempTitle, setTempTitle] = useState(title);
+  //
+  const handleSaveChanges = () => {
+    if (setTitle) {
+      setTitle(tempTitle);
+    }
+    setIsDialogOpen(false); // Đóng dialog
+  };
+
+  useEffect(() => {
+    if (isDialogOpen) {
+      setTempTitle(title);
+    }
+  }, [isDialogOpen, title]);
   return (
     <>
       <CustomOutlineDiv>
         <div className="flex items-center gap-x-3">
-        <Typography
-          variant="subtitle"
-          className="max-w-xl text-center break-words whitespace-pre-wrap"
-        >
-          {title}
-        </Typography>
+          <Typography
+            variant="subtitle"
+            className="max-w-xl text-center break-words whitespace-pre-wrap"
+          >
+            {title}
+          </Typography>
           <Button
             variant={"ghost"}
             size={"icon"}
@@ -81,6 +87,6 @@ function DialogEditSkillTitle() {
       </Dialog>
     </>
   );
-}
+};
 
 export default DialogEditSkillTitle;

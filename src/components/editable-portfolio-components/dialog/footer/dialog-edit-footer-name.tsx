@@ -15,10 +15,11 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { FooterName } from "@/lib/types";
 
 function DialogEditFooterName() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [title, setTitle] = useState(`name`);
+  const [title, setTitle] = useState<FooterName>(`name`);
   const [tempTitle, setTempTitle] = useState(title);
 
   const handleSaveChanges = () => {

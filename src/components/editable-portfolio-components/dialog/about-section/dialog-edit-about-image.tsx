@@ -12,11 +12,11 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Image, { StaticImageData } from "next/image";
-import AboutSectionImage from "@/../public/about-section/about_section_image.png";
+import { DialogEditAboutImageProps } from "@/lib/types";
 
-const DialogEditAboutImage = () => {
+const DialogEditAboutImage:React.FC<DialogEditAboutImageProps> = ({imageUrl}) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [imagePreviewUrl, setImagePreviewUrl] = useState(AboutSectionImage);
+  const [imagePreviewUrl, setImagePreviewUrl] = useState(imageUrl);
   //
   const [tempImagePreviewUrl, setTempImagePreviewUrl] = useState(imagePreviewUrl);
   //

@@ -13,13 +13,22 @@ import CustomOutlineDiv from "@/components/editable-portfolio-components/ui/cust
 import Logo from "@/components/editable-portfolio-components/ui/logo";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { LogoText } from "@/lib/types";
 
-const DialogEditLogo = () => {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [logoText, setLogoText] = useState("<LOGO />");
-  //
-  const [tempLogoText, setTempLogoText] = useState(logoText);
-  //
+interface DialogEditLogoProps {
+  isDialogOpen: boolean;
+  setIsDialogOpen: (isOpen: boolean) => void;
+  logoText: LogoText;
+  setLogoText: (text: LogoText) => void;
+}
+
+const DialogEditLogo: React.FC<DialogEditLogoProps> = ({
+  isDialogOpen,
+  logoText,
+  setIsDialogOpen,
+  setLogoText,
+}) => {
+  const [tempLogoText, setTempLogoText] = useState<LogoText>(logoText);
 
   const handleSaveChanges = () => {
     setLogoText(tempLogoText);

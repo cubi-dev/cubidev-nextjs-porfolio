@@ -1,7 +1,7 @@
 "use client";
 
-import Typography from "@/components/general/typography";
 import React, { useEffect, useState } from "react";
+import Typography from "@/components/general/typography";
 import CustomOutlineDiv from "@/components/editable-portfolio-components/ui/custom-outline-div";
 import { Button } from "@/components/ui/button";
 import { Pencil } from "lucide-react";
@@ -15,14 +15,20 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { DialogEditTestimonialTitleProps } from "@/lib/types";
 
-function DialogEditTestimonialTitle() {
+const DialogEditTestimonialTitle: React.FC<DialogEditTestimonialTitleProps> = ({
+  title,
+  setTitle,
+}) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [title, setTitle] = useState(`Nice things people have said about me:`);
+  // const [title, setTitle] = useState(`Nice things people have said about me:`);
   const [tempTitle, setTempTitle] = useState(title);
 
   const handleSaveChanges = () => {
-    setTitle(tempTitle); // Cập nhật title từ tempTitle
+    if (setTitle) {
+      setTitle(tempTitle); // Cập nhật title từ tempTitle
+    }
     setIsDialogOpen(false); // Đóng dialog
   };
 
@@ -36,12 +42,12 @@ function DialogEditTestimonialTitle() {
     <>
       <CustomOutlineDiv>
         <div className="flex items-center gap-x-3">
-        <Typography
-          variant="subtitle"
-          className="max-w-xl text-center break-words whitespace-pre-wrap"
-        >
-          {title}
-        </Typography>
+          <Typography
+            variant="subtitle"
+            className="max-w-xl text-center break-words whitespace-pre-wrap"
+          >
+            {title}
+          </Typography>
           <Button
             variant={"ghost"}
             size={"icon"}
@@ -57,7 +63,8 @@ function DialogEditTestimonialTitle() {
           <DialogHeader>
             <DialogTitle>Edit Testimonial Title</DialogTitle>
             <DialogDescription>
-              Edit your testimonial title to represent what your client talking about you include your talent and skill.
+              Edit your testimonial title to represent what your client talking
+              about you include your talent and skill.
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
@@ -81,6 +88,6 @@ function DialogEditTestimonialTitle() {
       </Dialog>
     </>
   );
-}
+};
 
 export default DialogEditTestimonialTitle;

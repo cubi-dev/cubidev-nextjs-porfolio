@@ -31,12 +31,21 @@ import ProjectWingie from "../../public/work-section/project-wingie.png";
 import ProjectPepehousing from "../../public/work-section/project-pepehousing.png";
 
 import AvatarDummy from "../../public/testimonial-section/avatar-dummy.svg";
+import AboutSectionImage from "@/../public/about-section/about_section_image.png";
+import HeroSecionImage from "@/../public/hero-section/hero_section_image.png";
 
 import {
+  AboutSectionProps,
+  ContactSectionProps,
   ExperienceDetails,
+  ExperienceSectionProps,
+  HeroSectionProps,
   ProjectDetails,
+  SkillSectionProps,
   TechDetails,
   TestimonialDetails,
+  TestimonialSectionProps,
+  WorkSectionProps,
 } from "@/lib/types";
 
 export const NAV_LINKS = [
@@ -66,7 +75,7 @@ export const EXTERNAL_LINKS = {
   FIGMA_FILE:
     "https://www.figma.com/design/dlk7IimfQanJgTH4eLWoKV/Personal-Portfolio-Website-Template-%7C-Mobile-%26-Desktop-(Community)?node-id=0-1&t=VxkU5ObcagGSwRpC-1",
 };
-
+// Hero section data
 export const SOCIAL_LINKS = [
   {
     icon: Github,
@@ -85,8 +94,45 @@ export const SOCIAL_LINKS = [
   },
 ];
 
+export const HERO_SECTION_DATA: HeroSectionProps = {
+  imageProps: {
+    imageUrl: HeroSecionImage,
+  },
+  informationProps: {
+    userName: "UserName",
+    description:
+      "I'm a full stack developer (React.js & Node.js) with a focus on creating (and occasionally designing) exceptional digital experiences that are fast, accessible, visually appealing, and responsive. Even though I have been creating web applications for over 7 years, I still love it as if it was something new.",
+    country: "Vietnam",
+    city: "Ho Chi Minh",
+    availableStatus: "Available for new projects",
+    githubLink:
+      SOCIAL_LINKS.find((link) => link.displayName === "Github")?.url || "",
+    twitterLink:
+      SOCIAL_LINKS.find((link) => link.displayName === "Twitter")?.url || "",
+    figmaLink:
+      SOCIAL_LINKS.find((link) => link.displayName === "Figma")?.url || "",
+  },
+};
+
+// About section data
+export const ABOUT_SECTION_DATA: AboutSectionProps = {
+  imageProps: {
+    imageUrl: AboutSectionImage,
+  },
+  titleProps: {
+    title: "Curious about me? Here you have it:",
+    setTitle: (title: string) => console.log(title),
+  },
+  informationProps: {
+    infor:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    setInfor: (infor: string) => console.log(infor),
+  },
+};
+
+// Skill section data
 export const TECHNOLOGIES: TechDetails[] = [
-  { 
+  {
     id: "1",
     label: "Javascript",
     logo: LogoJavascript,
@@ -187,6 +233,14 @@ export const TECHNOLOGIES: TechDetails[] = [
   },
 ];
 
+export const SKILLS_SECTION_DATA: SkillSectionProps = {
+  titleProps: {
+    title: "The skills, tools and technologies I am really good at:",
+  },
+  skillsProps: TECHNOLOGIES,
+};
+
+// Experience section data
 export const EXPERIENCES: ExperienceDetails[] = [
   {
     id: "1",
@@ -228,6 +282,14 @@ export const EXPERIENCES: ExperienceDetails[] = [
   },
 ];
 
+export const EXPERIENCE_SECTION_DATA: ExperienceSectionProps = {
+  titleProps: {
+    title: "Here is a quick summary of my most recent experiences:",
+  },
+  experiencesProps: EXPERIENCES,
+};
+
+// Work section data
 export const PROJECTS: ProjectDetails[] = [
   {
     id: "1",
@@ -289,6 +351,14 @@ export const PROJECTS: ProjectDetails[] = [
   },
 ];
 
+export const WORK_SECTION_DATA: WorkSectionProps = {
+  titleProps: {
+    title: "Some of the noteworthy projects I have built:",
+  },
+  projectsProps: PROJECTS,
+};
+
+// Testimonial section data
 export const TESTIMONIALS: TestimonialDetails[] = [
   {
     id: "1",
@@ -315,3 +385,22 @@ export const TESTIMONIALS: TestimonialDetails[] = [
       "Sagar was extremely easy and pleasant to work with and he truly cares about the project being a success. Sagar has a high level of knowledge and was able to work on my MERN stack application without any issues.",
   },
 ];
+
+export const TESTIMONIAL_SECTION_DATA: TestimonialSectionProps = {
+  titleProps: {
+    title: "Nice things people have said about me:",
+  },
+  testimonialsProps: TESTIMONIALS,
+};
+
+// Contact section data
+export const CONTACT_SECTION_DATA: ContactSectionProps = {
+  titleProps: {
+    title:
+      "What’s next? Feel free to reach out to me if you are looking for a developer, have a query, or simply want to connect.",
+  },
+  contactProps: {
+    email: "email@gmail.com",
+    phoneNumber: "+84 0901391234",
+  },
+};

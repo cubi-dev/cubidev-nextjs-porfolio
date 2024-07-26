@@ -13,15 +13,21 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { DialogEditAboutTitleProps } from "@/lib/types";
 
-function DialogEditAboutTitle() {
+const DialogEditAboutTitle: React.FC<DialogEditAboutTitleProps> = ({
+  title,
+  setTitle,
+}) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [title, setTitle] = useState(`Curious about me? Here you have it:`);
+  // const [title, setTitle] = useState(`Curious about me? Here you have it:`);
   //
   const [tempTitle, setTempTitle] = useState(title);
   //
   const handleSaveChanges = () => {
-    setTitle(tempTitle);
+    if (setTitle) {
+      setTitle(tempTitle);
+    }
     setIsDialogOpen(false); // Đóng dialog
   };
 
@@ -30,7 +36,6 @@ function DialogEditAboutTitle() {
       setTempTitle(title);
     }
   }, [isDialogOpen, title]);
-
 
   return (
     <>
@@ -76,6 +81,6 @@ function DialogEditAboutTitle() {
       </Dialog>
     </>
   );
-}
+};
 
 export default DialogEditAboutTitle;
