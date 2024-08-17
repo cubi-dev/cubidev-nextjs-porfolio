@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import TechDetails from "@/components/editable-portfolio-components/page-components/skills-section/tech-details/tech-details";
 import DialogEditSkillTitle from "../../dialog/skills-section/dialog-edit-skill-title";
 import DialogAddSkill from "../../dialog/skills-section/dialog-add-skills";
-import CustomOutlineDiv from "../../ui/custom-outline-div";
+import CustomOutlineDiv from "@/components/general/custom-outline-div";
 
 const SkillsSection = () => {
   const [technologies, setTechnologies] = useState(SKILLS_SECTION_DATA.skillsProps);

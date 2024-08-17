@@ -2,7 +2,7 @@
 
 import Typography from "@/components/general/typography";
 import React, { useEffect, useState } from "react";
-import CustomOutlineDiv from "../../ui/custom-outline-div";
+import CustomOutlineDiv from "@/components/general/custom-outline-div";
 import { Button } from "@/components/ui/button";
 import { Pencil } from "lucide-react";
 import {
@@ -17,7 +17,10 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { DialogEditContactTitleProps } from "@/lib/types";
 
-const DialogEditContactTitle: React.FC<DialogEditContactTitleProps> = ({title, setTitle}) => {
+const DialogEditContactTitle: React.FC<DialogEditContactTitleProps> = ({
+  title = "",
+  setTitle,
+}) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   // const [title, setTitle] = useState(
   //   `What’s next? Feel free to reach out to me if you are looking for a developer, have a query, or simply want to connect.`
@@ -25,7 +28,7 @@ const DialogEditContactTitle: React.FC<DialogEditContactTitleProps> = ({title, s
   const [tempTitle, setTempTitle] = useState(title);
 
   const handleSaveChanges = () => {
-    if(setTitle) {
+    if (setTitle) {
       setTitle(tempTitle); // Cập nhật title từ tempTitle
     }
     setIsDialogOpen(false); // Đóng dialog
@@ -86,6 +89,6 @@ const DialogEditContactTitle: React.FC<DialogEditContactTitleProps> = ({title, s
       </Dialog>
     </>
   );
-}
+};
 
 export default DialogEditContactTitle;

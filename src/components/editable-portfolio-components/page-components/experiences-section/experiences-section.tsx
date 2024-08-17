@@ -6,7 +6,7 @@ import { EXPERIENCE_SECTION_DATA } from "@/lib/data";
 import ExperienceDetail from "./experience-detail/experience-detail";
 import { ExperienceDetails } from "@/lib/types";
 import DialogEditExperienceTitle from "../../dialog/experiences-section/dialog-edit-experience-title";
-import CustomOutlineDiv from "../../ui/custom-outline-div";
+import CustomOutlineDiv from "@/components/general/custom-outline-div";
 import DialogAddExperience from "../../dialog/experiences-section/dialog-add-experience";
 
 const ExperiencesSection = () => {

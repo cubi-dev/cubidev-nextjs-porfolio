@@ -1,12 +1,11 @@
 "use client";
 import Tag from "@/components/general/tag";
-import Typography from "@/components/general/typography";
 import Container from "@/components/layout/container";
 import { PROJECTS, WORK_SECTION_DATA } from "@/lib/data";
 import React, { useState } from "react";
 import ProjectDetail from "./project-detail/project-detail";
 import DialogEditWorkTitle from "../../dialog/work-section/dialog-edit-work-title";
-import CustomOutlineDiv from "../../ui/custom-outline-div";
+import CustomOutlineDiv from "@/components/general/custom-outline-div";
 import { ProjectDetails } from "@/lib/types";
 import DialogAddProject from "../../dialog/work-section/dialog-add-project";
 

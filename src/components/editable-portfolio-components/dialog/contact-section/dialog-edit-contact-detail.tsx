@@ -2,7 +2,7 @@
 
 import Typography from "@/components/general/typography";
 import React, { useEffect, useState } from "react";
-import CustomOutlineDiv from "../../ui/custom-outline-div";
+import CustomOutlineDiv from "@/components/general/custom-outline-div";
 import { Button } from "@/components/ui/button";
 import { Copy, Mail, Pencil, Phone } from "lucide-react";
 import {
@@ -23,8 +23,8 @@ import { DialogEditContactDetailProps } from "@/lib/types";
 type CopyValue = "email" | "phoneNumber";
 
 const DialogEditContactDetail: React.FC<DialogEditContactDetailProps> = ({
-  email,
-  phoneNumber,
+  email = "",
+  phoneNumber = "",
   setEmail,
   setPhoneNumber,
 }) => {

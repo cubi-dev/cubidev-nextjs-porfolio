@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { TestimonialDetails } from "@/lib/types";
 import { Pencil } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
-import image_placeholder from "@/../public/testimonial-section/avatar-dummy.svg";
+import image_placeholder from "@/../public/portfolio-dev/testimonial-section/avatar-dummy.svg";
 import React, { useState } from "react";
 import {
   Dialog,
@@ -75,7 +75,7 @@ const TestimonialDetail = ({
 
   return (
     <>
-      <Card className="mx-auto flex flex-col items-center gap-6 p-8 md:w-2/3 md:p-12 lg:w-1/3">
+      <Card className="mx-auto flex flex-col items-center gap-6 p-8">
         <Button
           variant={"ghost"}
           size={"icon"}

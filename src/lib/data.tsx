@@ -1,46 +1,69 @@
-import { Figma, Github, Twitter } from "lucide-react";
+import {
+  Facebook,
+  Figma,
+  Github,
+  Instagram,
+  Phone,
+  Twitter,
+  TwitterIcon,
+} from "lucide-react";
 
-import LogoJavascript from "../../public/skill-section/icon-javascript.svg";
-import LogoTypescript from "../../public/skill-section/icon-typescript.svg";
-import LogoReact from "../../public/skill-section/icon-react.svg";
-import LogoNextjs from "../../public/skill-section/icon-nextjs.svg";
-import LogoNodejs from "../../public/skill-section/icon-nodejs.svg";
-import LogoExpress from "../../public/skill-section/icon-express.svg";
-import LogoExpressLight from "../../public/skill-section/icon-express-light.svg";
-import LogoNest from "../../public/skill-section/icon-nest.svg";
-import LogoSocket from "../../public/skill-section/icon-socket.svg";
-import LogoSocketLight from "../../public/skill-section/icon-socket-light.svg";
-import LogoPostgreSQL from "../../public/skill-section/icon-postgresql.svg";
-import LogoMongoDB from "../../public/skill-section/icon-mongodb.svg";
-import LogoSass from "../../public/skill-section/icon-sass.svg";
-import LogoTailwindcss from "../../public/skill-section/icon-tailwindcss.svg";
-import LogoFigma from "../../public/skill-section/icon-figma.svg";
-import LogoCypress from "../../public/skill-section/icon-cypress.svg";
-import LogoCypressLight from "../../public/skill-section/icon-cypress-light.svg";
-import LogoStorybook from "../../public/skill-section/icon-storybook.svg";
-import LogoGit from "../../public/skill-section/icon-git.svg";
+import LogoJavascript from "@/../public/portfolio-dev/skill-section/icon-javascript.svg";
+import LogoTypescript from "@/../public/portfolio-dev/skill-section/icon-typescript.svg";
+import LogoReact from "@/../public/portfolio-dev/skill-section/icon-react.svg";
+import LogoNextjs from "@/../public/portfolio-dev/skill-section/icon-nextjs.svg";
+import LogoNodejs from "@/../public/portfolio-dev/skill-section/icon-nodejs.svg";
+import LogoExpress from "@/../public/portfolio-dev/skill-section/icon-express.svg";
+import LogoExpressLight from "@/../public/portfolio-dev/skill-section/icon-express-light.svg";
+import LogoNest from "@/../public/portfolio-dev/skill-section/icon-nest.svg";
+import LogoSocket from "@/../public/portfolio-dev/skill-section/icon-socket.svg";
+import LogoSocketLight from "@/../public/portfolio-dev/skill-section/icon-socket-light.svg";
+import LogoPostgreSQL from "@/../public/portfolio-dev/skill-section/icon-postgresql.svg";
+import LogoMongoDB from "@/../public/portfolio-dev/skill-section/icon-mongodb.svg";
+import LogoSass from "@/../public/portfolio-dev/skill-section/icon-sass.svg";
+import LogoTailwindcss from "@/../public/portfolio-dev/skill-section/icon-tailwindcss.svg";
+import LogoFigma from "@/../public/portfolio-dev/skill-section/icon-figma.svg";
+import LogoCypress from "@/../public/portfolio-dev/skill-section/icon-cypress.svg";
+import LogoCypressLight from "@/../public/portfolio-dev/skill-section/icon-cypress-light.svg";
+import LogoStorybook from "@/../public/portfolio-dev/skill-section/icon-storybook.svg";
+import LogoGit from "@/../public/portfolio-dev/skill-section/icon-git.svg";
 
-import LogoUpwork from "../../public/skill-section/logo-upwork.svg";
-import LogoGreenApex from "../../public/skill-section/logo-greenapex.svg";
-import LogoGreenApexLight from "../../public/skill-section/logo-greenapex-light.svg";
-import LogoDotnpixel from "../../public/skill-section/logo-dotnpixel.svg";
-import LogoDotnpixelLight from "../../public/skill-section/logo-dotnpixel-light.svg";
+import LogoUpwork from "@/../public/portfolio-dev/skill-section/logo-upwork.svg";
+import LogoGreenApex from "@/../public/portfolio-dev/skill-section/logo-greenapex.svg";
+import LogoGreenApexLight from "@/../public/portfolio-dev/skill-section/logo-greenapex-light.svg";
+import LogoDotnpixel from "@/../public/portfolio-dev/skill-section/logo-dotnpixel.svg";
+import LogoDotnpixelLight from "@/../public/portfolio-dev/skill-section/logo-dotnpixel-light.svg";
 
-import ProjectFiskil from "../../public/work-section/project-fiskil.png";
-import ProjectWingie from "../../public/work-section/project-wingie.png";
-import ProjectPepehousing from "../../public/work-section/project-pepehousing.png";
+import ProjectFiskil from "@/../public/portfolio-dev/work-section/project-fiskil.png";
+import ProjectWingie from "@/../public/portfolio-dev/work-section/project-wingie.png";
+import ProjectPepehousing from "@/../public/portfolio-dev/work-section/project-pepehousing.png";
 
-import AvatarDummy from "../../public/testimonial-section/avatar-dummy.svg";
-import AboutSectionImage from "@/../public/about-section/about_section_image.png";
-import HeroSecionImage from "@/../public/hero-section/hero_section_image.png";
+import AvatarDummy from "@/../public/portfolio-dev/testimonial-section/avatar-dummy.svg";
+import AboutSectionImage from "@/../public/portfolio-dev/about-section/about_section_image.png";
+import HeroSecionImage from "@/../public/portfolio-dev/hero-section/hero_section_image.png";
+import HeroSecionImageMarketing from "@/../public/portfolio-marketing/hero-section/marketing_hero_image.png";
+
+import HeroSectionImageLawyer from "@/../public/portfolio-lawyer/hero-section/hero_section_default_lawyer.svg";
+
+import service_section_icon_1 from "@/../public/portfolio-lawyer/services-section/service_section_icon_1.svg";
+import service_section_icon_2 from "@/../public/portfolio-lawyer/services-section/service_section_icon_2.svg";
+import service_section_icon_3 from "@/../public/portfolio-lawyer/services-section/service_section_icon_3.svg";
+import service_section_icon_4 from "@/../public/portfolio-lawyer/services-section/service_section_icon_4.svg";
+
+import facebook_icon_lawyer from "@/../public/portfolio-lawyer/social-icon/social_icon_facebook.svg";
+import dribble_icon_lawyer from "@/../public/portfolio-lawyer/social-icon/social_icon_dribble.svg";
+import twitter_icon_lawyer from "@/../public/portfolio-lawyer/social-icon/social_icon_twitter.svg";
+import youtube_icon_lawyer from "@/../public/portfolio-lawyer/social-icon/social_icon_youtube.svg";
 
 import {
   AboutSectionProps,
+  AchievementDetails,
   ContactSectionProps,
   ExperienceDetails,
   ExperienceSectionProps,
   HeroSectionProps,
   ProjectDetails,
+  ServiceDetails,
   SkillSectionProps,
   TechDetails,
   TestimonialDetails,
@@ -402,5 +425,325 @@ export const CONTACT_SECTION_DATA: ContactSectionProps = {
   contactProps: {
     email: "email@gmail.com",
     phoneNumber: "+84 0901391234",
+  },
+};
+
+//______________________________________________________MARKETING DATA_______________________________________________________________________
+
+// Navigation links for marketing portfolio
+export const NAV_LINKS_MARKETING = [
+  {
+    label: "About",
+    href: "#about",
+  },
+  {
+    label: "Experience",
+    href: "#experience",
+  },
+  {
+    label: "Testimonials",
+    href: "#testimonials",
+  },
+  {
+    label: "Contact",
+    href: "#contact",
+  },
+  {
+    label: "Service",
+    href: "#service",
+  },
+];
+
+// Social link data for marketing portfolio
+export const SOCIAL_LINKS_MARKETING = [
+  {
+    icon: Facebook,
+    url: "https://www.facebook.com/",
+    displayName: "Facebook",
+  },
+  {
+    icon: Instagram,
+    url: "https://www.instagram.com/",
+    displayName: "Instagram",
+  },
+  {
+    icon: Phone,
+    url: "0912341234",
+    displayName: "Phone",
+  },
+  {
+    icon: Twitter,
+    url: "https://twitter.com/",
+    displayName: "Twitter",
+  },
+];
+
+// Hero section data for marketing portfolio
+export const HERO_SECTION_DATA_MARKETING: HeroSectionProps = {
+  imageProps: {
+    imageUrl: HeroSecionImageMarketing,
+  },
+  informationProps: {
+    userName: "Andrew",
+    description:
+      "Introducing King Andrew, a seasoned Business Consultant, Internet Marketer, and Digital Marketer. With unparalleled expertise, Andrew unveils an exclusive and undisclosed method to unlock substantial online earnings, providing you with insights and strategies that have remained unknown to many. Discover the untapped potential to generate weekly income directly deposited into your bank account with this transformative business model.",
+    facebookLink:
+      SOCIAL_LINKS_MARKETING.find((link) => link.displayName === "Facebook")
+        ?.url || "",
+    instagramLink:
+      SOCIAL_LINKS_MARKETING.find((link) => link.displayName === "Instagram")
+        ?.url || "",
+    phoneLink:
+      SOCIAL_LINKS_MARKETING.find((link) => link.displayName === "Phone")
+        ?.url || "",
+    twitterLink:
+      SOCIAL_LINKS_MARKETING.find((link) => link.displayName === "Twitter")
+        ?.url || "",
+  },
+};
+
+// Experience section data for marketing portfolio
+export const SERVICES_DATA_MARKETING: ServiceDetails[] = [
+  {
+    id: "1",
+    title: "Web Development",
+    description:
+      "It is a long established fact that reader will be distracted by the content of the layout of the page.",
+    link: "https://www.google.com",
+  },
+  {
+    id: "2",
+    title: "Mobile Development",
+    description:
+      "Creating mobile applications that are fast, responsive, and visually appealing.",
+    link: "https://www.google.com",
+  },
+  {
+    id: "3",
+    title: "UI/UX Design",
+    description:
+      "Designing user interfaces and experiences that are intuitive and engaging.",
+    link: "https://www.google.com",
+  },
+  {
+    id: "4",
+    title: "Web Development",
+    description:
+      "It is a long established fact that reader will be distracted by the content of the layout of the page.",
+    link: "https://www.google.com",
+  },
+  {
+    id: "5",
+    title: "Mobile Development",
+    description:
+      "Creating mobile applications that are fast, responsive, and visually appealing.",
+    link: "https://www.google.com",
+  },
+  {
+    id: "6",
+    title: "UI/UX Design",
+    description:
+      "Designing user interfaces and experiences that are intuitive and engaging.",
+    link: "https://www.google.com",
+  },
+];
+
+// Contact section data for marketing portfolio
+export const CONTACT_SECTION_DATA_MARKETING: ContactSectionProps = {
+  titleProps: {
+    title:
+      "If you are intrigued by my groundbreaking marketing strategies and eager to delve deeper into their potential, don't hesitate to reach out. Let's ignite the spark and embark on a transformative journey together. Contact me now to set the wheels in motion.",
+  },
+  contactProps: {
+    email: "king_andrew@gmail.com",
+  },
+};
+
+// Experience section data for marketing portfolio
+export const EXPERIENCES_MARKETING: ExperienceDetails[] = [
+  {
+    id: "1",
+    logo: LogoUpwork,
+    logoAlt: "Upwork logo",
+    position: "Independent Freelancer",
+    startDate: new Date(2021, 10),
+    currentlyWorkHere: true,
+    summary: [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+    ],
+  },
+  {
+    id: "2",
+    logo: LogoGreenApex,
+    darkModeLogo: LogoGreenApexLight,
+    logoAlt: "Greenapex logo",
+    position: "Team Lead Marketing Team",
+    startDate: new Date(2017, 6),
+    endDate: new Date(2021, 9),
+    summary: [
+      "Lorem Ipsum is that it has a more-or-less normal distribution of letters",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    ],
+  },
+  {
+    id: "3",
+    logo: LogoDotnpixel,
+    darkModeLogo: LogoDotnpixelLight,
+    logoAlt: "Dotnpixel logo",
+    position: "Marketing Agency",
+    startDate: new Date(2015, 11),
+    endDate: new Date(2017, 4),
+    summary: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    ],
+  },
+];
+
+export const EXPERIENCE_SECTION_DATA_MARKETING: ExperienceSectionProps = {
+  titleProps: {
+    title: "Here is a quick summary of my most recent experiences:",
+  },
+  experiencesProps: EXPERIENCES_MARKETING,
+};
+
+//______________________________________________________LAWYER_DATA_______________________________________________________________________
+
+// Navigation links for lawyer portfolio
+export const NAV_LINKS_LAWYER = [
+  {
+    label: "About",
+    href: "#about",
+  },
+  {
+    label: "Service",
+    href: "#service",
+  },
+  {
+    label: "Achievement",
+    href: "#achievement",
+  },
+  {
+    label: "Testimonial",
+    href: "#testimonial",
+  },
+  {
+    label: "Contact",
+    href: "#contact",
+  },
+];
+
+// Experience section data for lawyer portfolio
+export const SERVICES_DATA_LAWYER: ServiceDetails[] = [
+  {
+    id: "1",
+    title: "Enviromental Law",
+    description:
+      "Environmental legal issues might occur since the planned business activities are designed",
+    icon: service_section_icon_1,
+  },
+  {
+    id: "2",
+    title: "Corporate and Commercial",
+    description:
+      "Creating mobile applications that are fast, responsive, and visually appealing.",
+    icon: service_section_icon_2,
+  },
+  {
+    id: "3",
+    title: "Information and Technology",
+    description:
+      "Designing user interfaces and experiences that are intuitive and engaging.",
+    icon: service_section_icon_3,
+  },
+  {
+    id: "4",
+    title: "Other Services",
+    description:
+      "It is a long established fact that reader will be distracted by the content of the layout of the page.",
+    icon: service_section_icon_4,
+  },
+];
+
+// Testimonial section data for lawyer portfolio
+export const TESTIMONIALS_LAWYER: TestimonialDetails[] = [
+  {
+    id: "1",
+    personName: "Anya Tailor Joy",
+    personAvatar: AvatarDummy,
+    title: "CEO, SF Industires",
+    testimonial:
+      "We had an incredible experience working with Landify and were impressed they made such a big difference in only three weeks. Our team is so grateful for the wonderful improvements they made and their ability to get familiar with the concept so quickly.",
+  },
+  {
+    id: "2",
+    personName: "Sri Alam",
+    personAvatar: AvatarDummy,
+    title: "CEO, Membagongkan GROUP",
+    testimonial:
+      "Fermin Apps has collaborated with Landify team for several projects such as Photo Sharing Apps and Custom Social Networking Apps. The experience has been pleasant, professional and exceeding our expectations.",
+  },
+];
+
+// Social link data for marketing portfolio
+export const SOCIAL_LINKS_LAWYER = [
+  {
+    icon: facebook_icon_lawyer,
+    url: "https://www.instagram.com/",
+    displayName: "Instagram",
+  },
+  {
+    icon: dribble_icon_lawyer,
+    url: "https://dribbble.com/",
+    displayName: "Dibble",
+  },
+  {
+    icon: twitter_icon_lawyer,
+    url: "https://twitter.com/",
+    displayName: "Twitter",
+  },
+  {
+    icon: youtube_icon_lawyer,
+    url: "https://youtube.com/",
+    displayName: "Youtube",
+  },
+];
+
+// Hero section data for lawyer portfolio
+export const HERO_SECTION_DATA_LAWYER: HeroSectionProps = {
+  imageProps: {
+    imageUrl: HeroSectionImageLawyer,
+  },
+  informationProps: {
+    userName: "Tiara Andini",
+    major: "Lawyer",
+    message: "Your Solution Legal Consultancy",
+    availableStatus: "Stay connected to the upcoming & Recent jobs",
+    description:
+      "We are here to help you take care of your legality with the best service especially for you.",
+    emailLink: "email@gmail.com",
+  },
+};
+
+// Achievement section data for lawyer portfolio
+export const ACHIEVEMENTS_DATA_LAWYER: AchievementDetails = {
+  id: "1",
+  message: "My achievement in the journey depicted in numbers",
+  clients: "30",
+  businessLegalities: "300+",
+  yearOfJourney: "8",
+};
+
+// Contact section data for marketing portfolio
+export const CONTACT_SECTION_DATA_LAWYER: ContactSectionProps = {
+  titleProps: {
+    title:
+      "Request for a personalized budget for your legal problem. We will send you a coupe options in 24 hours. You can have free consult , if a our first customer",
+  },
+  contactProps: {
+    email: "yourEmail@gmail.com",
   },
 };

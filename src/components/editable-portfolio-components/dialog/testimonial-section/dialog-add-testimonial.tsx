@@ -14,7 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Plus } from "lucide-react";
 import { StaticImageData } from "next/image";
-import image_placeholder from "@/../public/testimonial-section/avatar-dummy.svg";
+import image_placeholder from "@/../public/portfolio-dev/testimonial-section/avatar-dummy.svg";
 import { TestimonialDetails } from "@/lib/types";
 import { Textarea } from "@/components/ui/textarea";
 

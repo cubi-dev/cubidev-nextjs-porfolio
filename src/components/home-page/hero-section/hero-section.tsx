@@ -1,10 +1,10 @@
-'use client';
+"use client";
 import React from "react";
 import Image from "next/image";
 import Container from "@/components/layout/container";
 import Typography from "@/components/general/typography";
 import { MapPin } from "lucide-react";
-import HeroSecionImage from "@/../public/hero-section/hero_section_image.png";
+import HeroSecionImage from "@/../public/portfolio-dev/hero-section/hero_section_image.png";
 import SocialLink from "../../general/social-link";
 
 const HeroSection = () => {

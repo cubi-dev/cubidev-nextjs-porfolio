@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { MapPin, Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import CustomOutlineDiv from "../../ui/custom-outline-div";
+import CustomOutlineDiv from "@/components/general/custom-outline-div";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Typography from "@/components/general/typography";
@@ -20,42 +20,24 @@ import { Textarea } from "@/components/ui/textarea";
 import { DialogEditHeroInformationProps } from "@/lib/types";
 
 const DialogEditHeroInformation: React.FC<DialogEditHeroInformationProps> = ({
-  userName,
+  userName = '',
   setUserName,
-  description,
+  description = '',
   setDescription,
-  country,
+  country = '',
   setCountry,
-  city,
+  city = '',
   setCity,
-  availableStatus,
+  availableStatus = '',
   setAvailableStatus,
-  githubLink,
+  githubLink = '',
   setGithubLink,
-  twitterLink,
+  twitterLink = '',
   setTwitterLink,
-  figmaLink,
+  figmaLink = '',
   setFigmaLink,
 }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  // const [userName, setUserName] = useState(`UserName`);
-  // const [description, setDescription] = useState(
-  //   `I'm a full stack developer (React.js & Node.js) with a focus on creating (and occasionally designing) exceptional digital experiences that are fast, accessible, visually appealing, and responsive. Even though I have been creating web applications for over 7 years, I still love it as if it was something new.`
-  // );
-  // const [country, setCountry] = useState(`VietNam`);
-  // const [city, setCity] = useState(`Ho Chi Minh`);
-  // const [availableStatus, setAvailableStatus] = useState(
-  //   `Available for new projects`
-  // );
-  // const [githubLink, setGithubLink] = useState(
-  //   SOCIAL_LINKS.find((link) => link.displayName === "Github")?.url || ""
-  // );
-  // const [twitterLink, setTwitterLink] = useState(
-  //   SOCIAL_LINKS.find((link) => link.displayName === "Twitter")?.url || ""
-  // );
-  // const [figmaLink, setFigmaLink] = useState(
-  //   SOCIAL_LINKS.find((link) => link.displayName === "Figma")?.url || ""
-  // );
   // Cập nhật SOCIAL_LINKS dựa trên state
   const updatedSocialLinks = SOCIAL_LINKS.map((link) => {
     switch (link.displayName) {

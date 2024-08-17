@@ -1,13 +1,12 @@
 "use client";
 import Tag from "@/components/general/tag";
-import Typography from "@/components/general/typography";
 import Container from "@/components/layout/container";
 import { TESTIMONIAL_SECTION_DATA } from "@/lib/data";
 import React, { useState } from "react";
 import TestimonialDetail from "./testimonial-detail/testimonial-detail";
 import DialogEditTestimonialTitle from "../../dialog/testimonial-section/dialog-edit-testimonial-title";
 import { TestimonialDetails } from "@/lib/types";
-import CustomOutlineDiv from "../../ui/custom-outline-div";
+import CustomOutlineDiv from "@/components/general/custom-outline-div";
 import DialogAddTestimonial from "../../dialog/testimonial-section/dialog-add-testimonial";
 
 const TestimonialSection = () => {

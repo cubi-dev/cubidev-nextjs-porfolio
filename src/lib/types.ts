@@ -2,7 +2,15 @@ import type { StaticImageData } from "next/image";
 
 // _____________________________________________________________HEADER_SECTION___________________________________________________________
 // Type for Logo-Header component
-export type LogoText = string;
+export type LogoPortfolio = {
+  logoText?: string;
+  logoImage?: string | StaticImageData;
+  logoImageDarkMode?: string | StaticImageData;
+};
+
+export type DialogEditCVProps = {
+  onFileChange: (file: File) => void;
+};
 // _____________________________________________________________END_HEADER_SECTION___________________________________________________________
 
 // _____________________________________________________________HERO_SECTION___________________________________________________________
@@ -13,22 +21,34 @@ export type DialogEditHeroImageProps = {
 
 // Type for DialogEditHeroInformation component
 export type DialogEditHeroInformationProps = {
-  userName: string;
+  userName?: string;
   setUserName?: React.Dispatch<React.SetStateAction<string>>;
-  description: string;
+  description?: string;
   setDescription?: React.Dispatch<React.SetStateAction<string>>;
-  country: string;
+  message?: string;
+  setMessage?: React.Dispatch<React.SetStateAction<string>>;
+  country?: string;
   setCountry?: React.Dispatch<React.SetStateAction<string>>;
-  city: string;
+  city?: string;
   setCity?: React.Dispatch<React.SetStateAction<string>>;
-  availableStatus: string;
+  availableStatus?: string;
   setAvailableStatus?: React.Dispatch<React.SetStateAction<string>>;
-  githubLink: string;
+  githubLink?: string;
   setGithubLink?: React.Dispatch<React.SetStateAction<string>>;
-  twitterLink: string;
+  twitterLink?: string;
   setTwitterLink?: React.Dispatch<React.SetStateAction<string>>;
-  figmaLink: string;
+  figmaLink?: string;
   setFigmaLink?: React.Dispatch<React.SetStateAction<string>>;
+  facebookLink?: string;
+  setFacebookLink?: React.Dispatch<React.SetStateAction<string>>;
+  instagramLink?: string;
+  setInstagramLink?: React.Dispatch<React.SetStateAction<string>>;
+  phoneLink?: string;
+  setPhoneLink?: React.Dispatch<React.SetStateAction<string>>;
+  emailLink?: string;
+  setEmailLink?: React.Dispatch<React.SetStateAction<string>>;
+  major?: string;
+  setMajor?: React.Dispatch<React.SetStateAction<string>>;
 };
 
 // Type for HeroSection component
@@ -102,14 +122,14 @@ export type DialogEditExperienceTitleProps = {
 
 export type ExperienceDetails = {
   id: string;
-  logo: string | StaticImageData;
+  logo?: string | StaticImageData;
   darkModeLogo?: string | StaticImageData;
-  logoAlt: string;
-  position: string;
+  logoAlt?: string;
+  position?: string;
   currentlyWorkHere?: boolean;
-  startDate: Date;
+  startDate?: Date;
   endDate?: Date;
-  summary: string[];
+  summary?: string[];
 };
 
 export type ExperienceSectionProps = {
@@ -163,14 +183,14 @@ export type TestimonialSectionProps = {
 // ______________________________________________________________CONTACT_SECTION___________________________________________________________
 
 export type DialogEditContactTitleProps = {
-  title: string;
+  title?: string;
   setTitle?: (title: string) => void;
 };
 
 export type DialogEditContactDetailProps = {
-  email: string;
+  email?: string;
   setEmail?: (email: string) => void;
-  phoneNumber: string;
+  phoneNumber?: string;
   setPhoneNumber?: (phoneNumber: string) => void;
 };
 
@@ -181,3 +201,46 @@ export type ContactSectionProps = {
 // _____________________________________________________________HEADER_SECTION___________________________________________________________
 // Type for Logo-Header component
 export type FooterName = string;
+
+// _____________________________________________________________SERVICES_SECTION___________________________________________________________
+
+export type ServiceDetails = {
+  icon?: string | StaticImageData;
+  id: string;
+  title: string;
+  description: string;
+  link?: string;
+};
+
+export type ServicesSectionProps = {
+  services: ServiceDetails[];
+};
+
+// _____________________________________________________________END_SERVICES_SECTION___________________________________________________________
+
+
+// _____________________________________________________________ACHIEVEMENT_SECTION___________________________________________________________
+
+export type DialogEditAchievementTitleProps = {
+  message: string;
+  setMessage?: (message: string) => void;
+};
+
+export type DialogEditAchievementInformationProps = {
+  clients: string;
+  businessLegalities: string;
+  yearOfJourney: string;
+  setClients?: (clients: string) => void;
+  setBusinessLegalities?: (businessLegalities: string) => void;
+  setYearOfJourney?: (yearOfJourney: string) => void;
+};
+
+export type AchievementDetails = {
+  id: string;
+  message?: string;
+  clients?: string;
+  businessLegalities?: string; 
+  yearOfJourney?: string;
+};
+
+// _____________________________________________________________END_ACHIEVEMENT_SECTION_____________________________________________________

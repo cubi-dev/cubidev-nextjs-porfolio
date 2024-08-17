@@ -2,7 +2,7 @@
 
 import Typography from "@/components/general/typography";
 import React, { useEffect, useState } from "react";
-import CustomOutlineDiv from "../../ui/custom-outline-div";
+import CustomOutlineDiv from "@/components/general/custom-outline-div";
 import { Button } from "@/components/ui/button";
 import { Pencil } from "lucide-react";
 import {

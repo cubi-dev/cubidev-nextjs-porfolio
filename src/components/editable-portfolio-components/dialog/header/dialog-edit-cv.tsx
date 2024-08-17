@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import {
   Dialog,
@@ -9,12 +10,22 @@ import {
 } from "@/components/ui/dialog";
 import { Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import CustomOutlineDiv from "@/components/editable-portfolio-components/ui/custom-outline-div";
+import CustomOutlineDiv from "@/components/general/custom-outline-div";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { DialogEditCVProps } from "@/lib/types";
 
-const DialogEditCV = () => {
+const DialogEditCV: React.FC<DialogEditCVProps> = ({ onFileChange }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setSelectedFileName(file.name);
+      onFileChange(file);
+    }
+  };
   return (
     <div className="flex items-center justify-center gap-x-5">
       <CustomOutlineDiv>
@@ -39,7 +50,12 @@ const DialogEditCV = () => {
           </DialogHeader>
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="cv">CV</Label>
-            <Input id="cv" type="file" accept=".pdf"/>
+            <Input
+              id="cv"
+              type="file"
+              accept=".pdf"
+              onChange={handleFileChange}
+            />
           </div>
           <DialogFooter>
             <Button type="submit" onClick={() => setIsDialogOpen(false)}>

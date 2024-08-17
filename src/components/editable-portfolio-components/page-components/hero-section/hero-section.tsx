@@ -3,31 +3,32 @@ import React, { useState } from "react";
 import Container from "@/components/layout/container";
 import DialogEditHeroImage from "../../dialog/hero-section/dialog-edit-hero-image";
 import DialogEditHeroInformation from "../../dialog/hero-section/dialog-edit-hero-information";
-import HeroSecionImage from "@/../public/hero-section/hero_section_image.png";
 import { HERO_SECTION_DATA } from "@/lib/data";
 
 const HeroSection = () => {
   const [userName, setUserName] = useState(
-    HERO_SECTION_DATA.informationProps.userName
+    HERO_SECTION_DATA.informationProps.userName || ""
   );
   const [description, setDescription] = useState(
-    HERO_SECTION_DATA.informationProps.description
+    HERO_SECTION_DATA.informationProps.description || ""
   );
   const [country, setCountry] = useState(
-    HERO_SECTION_DATA.informationProps.country
+    HERO_SECTION_DATA.informationProps.country || ""
   );
-  const [city, setCity] = useState(HERO_SECTION_DATA.informationProps.city);
+  const [city, setCity] = useState(
+    HERO_SECTION_DATA.informationProps.city || ""
+  );
   const [availableStatus, setAvailableStatus] = useState(
-    HERO_SECTION_DATA.informationProps.availableStatus
+    HERO_SECTION_DATA.informationProps.availableStatus || ""
   );
   const [githubLink, setGithubLink] = useState(
-    HERO_SECTION_DATA.informationProps.githubLink
+    HERO_SECTION_DATA.informationProps.githubLink || ""
   );
   const [twitterLink, setTwitterLink] = useState(
-    HERO_SECTION_DATA.informationProps.twitterLink
+    HERO_SECTION_DATA.informationProps.twitterLink || ""
   );
   const [figmaLink, setFigmaLink] = useState(
-    HERO_SECTION_DATA.informationProps.figmaLink
+    HERO_SECTION_DATA.informationProps.figmaLink || ""
   );
   const heroSectionData = {
     ...HERO_SECTION_DATA,

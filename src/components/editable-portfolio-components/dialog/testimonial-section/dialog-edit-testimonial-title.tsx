@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Typography from "@/components/general/typography";
-import CustomOutlineDiv from "@/components/editable-portfolio-components/ui/custom-outline-div";
+import CustomOutlineDiv from "@/components/general/custom-outline-div";
 import { Button } from "@/components/ui/button";
 import { Pencil } from "lucide-react";
 import {

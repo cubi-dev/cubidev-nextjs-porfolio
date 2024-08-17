@@ -18,14 +18,19 @@ import Typography from "@/components/general/typography";
 
 import DialogEditLogo from "../dialog/header/dialog-edit-logo";
 import DialogEditCV from "../dialog/header/dialog-edit-cv";
-import { LogoText } from "@/lib/types";
+import { LogoPortfolio } from "@/lib/types";
+import logo_default from "@/../public/portfolio-dev/header/logo_default.png";
 
 const Header = () => {
   const scrolled = useScroll(40);
   const [isOpen, setIsOpen] = useState(false);
   const size = useWindowSize();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [logoText, setLogoText] = useState<LogoText>("<LOGO />");
+  const [logo, setLogo] = useState<LogoPortfolio>({
+    logoImage: logo_default,
+    logoImageDarkMode: logo_default,
+  });
+  const [file, setFile] = useState<File | null>(null);
 
   // close sidebar if open in screen size < 768px
   useEffect(() => {
@@ -45,8 +50,8 @@ const Header = () => {
         <DialogEditLogo
           isDialogOpen={isDialogOpen}
           setIsDialogOpen={setIsDialogOpen}
-          logoText={logoText}
-          setLogoText={setLogoText}
+          logo={logo}
+          setLogo={setLogo}
         />
         {/* nav desktop */}
         <div className="hidden items-center gap-6 md:flex">
@@ -76,7 +81,7 @@ const Header = () => {
           <div className="h-6 w-0.5 bg-gray-100"></div>
           <div className="flex items-center gap-4">
             <ThemeSwitcher />
-            <DialogEditCV />
+            <DialogEditCV onFileChange={setFile} />
           </div>
         </div>
         {/* nav mobile */}
@@ -91,8 +96,8 @@ const Header = () => {
               <DialogEditLogo
                 isDialogOpen={isDialogOpen}
                 setIsDialogOpen={setIsDialogOpen}
-                logoText={logoText}
-                setLogoText={setLogoText}
+                logo={logo}
+                setLogo={setLogo}
               />
               <DrawerClose asChild>
                 <IconButton>
@@ -137,7 +142,7 @@ const Header = () => {
                 <ThemeSwitcher />
               </div>
               {/* <DownloadCV /> */}
-              <DialogEditCV />
+              <DialogEditCV onFileChange={setFile} />
             </div>
           </DrawerContent>
         </Drawer>

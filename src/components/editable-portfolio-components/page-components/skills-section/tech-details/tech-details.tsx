@@ -4,7 +4,7 @@ import type { TechDetails } from "@/lib/types";
 import Typography from "@/components/general/typography";
 import Link from "@/components/navigation/link";
 import ImageWrapper from "@/components/general/image-wrapper";
-import CustomOutlineDiv from "@/components/editable-portfolio-components/ui/custom-outline-div";
+import CustomOutlineDiv from "@/components/general/custom-outline-div";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Pencil } from "lucide-react";
